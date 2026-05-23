@@ -1,4 +1,4 @@
-An app designed to analyse a password strength and security. Built using Python.
+An application designed to analyse password strength and security. Built using Python.
 
 Author: Eesha Mohammed.
 
