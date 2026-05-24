@@ -10,5 +10,13 @@ elif len(current_password) >= 6 and len(current_password) <= 9:
 else:
     score = score + 2 #Awards two points if character length is equal to or over ten
 
+#Initially sets the password to contain no letters, numbers or symbols
+has_letter = False
+has_number = False
+has_symbol = False
+
+
+
+
 print(f"Your score is: {score}") #Prints password score
 
