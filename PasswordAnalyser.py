@@ -64,7 +64,7 @@ elif has_lowercase:
 elif has_uppercase:
      score = score + 1
 
-print(f"Your password strength score is: {score}") #Prints password score
+print(f"Your password strength score is: {score} out of 7") #Prints password score
 
 recommendation = input("Would you like a stronger and more secure password recommendation? ")
 recommendation = recommendation.lower().strip() #Converts user input to lowercase and removes spaces
