@@ -1,8 +1,10 @@
 current_password = input("Please enter your current password: ") #Prompts user to input their current password
-if current_password.strip() == "": #Checks if input is empty
+
+while current_password.strip() == "": #Checks if input is empty
     print("Invalid password, please enter password again. ") #Prompts user to enter password again
-else:
-    print(f"Analysing: {current_password}") #Prints Analysing with the users current password
+    current_password = input("Please enter your current password: ") #Prompts user to re-enter their current password
+
+print(f"Analysing: {current_password}") #Prints Analysing with the users current password
 
 score = 0 #Initialises password score to zero
 
