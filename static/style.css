@@ -16,4 +16,5 @@ p{
     font-family: "Papyrus", "Copperplate", fantasy;
     font-size: clamp(16px, 3vw, 24px); /*So screen adapts to fit all screen sizes*/
     max-width: 700px;
+    font-weight: bold; 
 }
