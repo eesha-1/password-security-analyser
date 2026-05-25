@@ -77,6 +77,11 @@ while recommendation not in yes_response and recommendation not in no_response:
     recommendation = recommendation.lower().strip() #Converts user input to lowercase and removes spaces
 if recommendation in yes_response:
     print("Generating a secure password... ")
+    characters = string.ascii_letters + string.digits + string.punctuation
+    secure_password = "" #initially sets secure password to nothing
+    for i in range(12): #Generates 12 random characters
+        secure_password = secure_password + random.choice(characters)
+    print(f"Your recommended secure password is: {secure_password}") #Prints recommended secure password
 elif recommendation in no_response:
     print("Ok, thank you for using our system. Stay safe! ")
 
