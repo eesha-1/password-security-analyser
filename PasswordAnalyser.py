@@ -77,11 +77,34 @@ while recommendation not in yes_response and recommendation not in no_response:
     recommendation = recommendation.lower().strip() #Converts user input to lowercase and removes spaces
 if recommendation in yes_response:
     print("Generating a secure password... ")
-    characters = string.ascii_letters + string.digits + string.punctuation
-    secure_password = "" #initially sets secure password to nothing
-    for i in range(12): #Generates 12 random characters
-        secure_password = secure_password + random.choice(characters)
-    print(f"Your recommended secure password is: {secure_password}") #Prints recommended secure password
+    acceptable_password = False
+    while acceptable_password == False:
+        characters = string.ascii_letters + string.digits + string.punctuation
+        secure_password = "" #initially sets secure password to nothing
+        for i in range(12): #Generates 12 random characters
+            secure_password = secure_password + random.choice(characters)
+        #Initially sets generated password to have no upper or lowercase letters or numbers, symbols   
+        generated_has_letter = False
+        generated_has_number = False
+        generated_has_symbol = False
+        generated_has_uppercase = False
+        generated_has_lowercase = False
+
+        for character in secure_password:
+            if character.isalpha(): #If alphabetical letter
+                generated_has_letter = True
+            if character.isdigit(): #If number
+                generated_has_number = True
+            if not character.isalpha() and not character.isdigit():
+                generated_has_symbol = True
+            if character.isupper():
+                generated_has_uppercase = True
+            if character.islower():
+                generated_has_lowercase = True 
+        if generated_has_letter and generated_has_number and generated_has_symbol and generated_has_uppercase and generated_has_lowercase:
+            acceptable_password = True
+            print(f"Your recommended secure password is: {secure_password}") #Prints recommended secure password
+                
 elif recommendation in no_response:
     print("Ok, thank you for using our system. Stay safe! ")
 
