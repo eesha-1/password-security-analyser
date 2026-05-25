@@ -1,3 +1,6 @@
+import string
+import random
+
 current_password = input("Please enter your current password: ") #Prompts user to input their current password
 
 while current_password.strip() == "": #Checks if input is empty
@@ -62,4 +65,19 @@ elif has_uppercase:
      score = score + 1
 
 print(f"Your password strength score is: {score}") #Prints password score
+
+recommendation = input("Would you like a stronger and more secure password recommendation? ")
+recommendation = recommendation.lower().strip() #Converts user input to lowercase and removes spaces
+yes_response = ["yes", "yeah", "y", "yep", "sure", "ok", "okay"] #Stores yes inputs
+no_response = ["no", "nope", "n", "nah"] #Stores no inputs
+
+while recommendation not in yes_response and recommendation not in no_response:
+    print ("Invalid response, please enter yes or no. ")
+    recommendation = input("Would you like a stronger and more secure password recommendation? ")
+    recommendation = recommendation.lower().strip() #Converts user input to lowercase and removes spaces
+if recommendation in yes_response:
+    print("Generating a secure password... ")
+elif recommendation in no_response:
+    print("Ok, thank you for using our system. Stay safe! ")
+
 
