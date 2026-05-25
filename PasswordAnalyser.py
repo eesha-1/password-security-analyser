@@ -1,5 +1,8 @@
 current_password = input("Please enter your current password: ") #Prompts user to input their current password
-print(f"Analysing: {current_password}") #Prints Analysing with the users current password
+if current_password.strip() == "": #Checks if input is empty
+    print("Invalid password, please enter password again. ") #Prompts user to enter password again
+else:
+    print(f"Analysing: {current_password}") #Prints Analysing with the users current password
 
 score = 0 #Initialises password score to zero
 
@@ -37,8 +40,6 @@ elif has_number:
     score = score + 1
 elif has_symbol:
     score = score + 1
-else:
-    print("Invalid password, please enter your password again. ") #Prints if user did not enter a value
 
 #Checking lowercase and uppercase characters in the password
 #initially sets the password to contain no lowercase or uppercase letters
