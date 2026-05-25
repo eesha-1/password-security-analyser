@@ -107,5 +107,4 @@ if recommendation in yes_response:
                 
 elif recommendation in no_response:
     print("Ok, thank you for using our system. Stay safe! ")
-
-
+   
