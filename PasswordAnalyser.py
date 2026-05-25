@@ -40,6 +40,23 @@ elif has_symbol:
 else:
     print("Invalid password, please enter your password again. ") #Prints if user did not enter a value
 
+#Checking lowercase and uppercase characters in the password
+#initially sets the password to contain no lowercase or uppercase letters
+has_lowercase = False 
+has_uppercase = False
+
+for character in current_password:
+    if character.islower():
+        has_lowercase = True
+    elif character.isupper():
+        has_uppercase = True
+
+if has_lowercase and has_uppercase: #If password contains mix of uppercase and lowercase letters
+    score = score + 2
+elif has_lowercase:
+     score = score + 1
+elif has_uppercase:
+     score = score + 1
 
 print(f"Your password strength score is: {score}") #Prints password score
 
