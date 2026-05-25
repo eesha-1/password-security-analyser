@@ -4,10 +4,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Password Strength & Security Analyser</title>
 </head>
 <body>
     <h1>Password Strength & Security Analyser</h1> 
     <p>Analyse your password strength and receive secure password recommendations to improve your online safety!</p>
+
+    <form method="POST">
+        <input type="password" name="password" placeholder="Enter your password">
+        <button type="submit">Analyse Password</button>
+    </form>
 </body>
 </html>
