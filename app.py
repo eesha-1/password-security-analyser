@@ -14,7 +14,35 @@ def home():
             score = score + 1 #Awards one point if length is between six and nine characters
         else:
             score = score + 2 #Awards two points if character length is equal to or over ten
- 
+        
+        #Initially sets the password to contain no letters, numbers or symbols
+        has_letter = False
+        has_number = False
+        has_symbol = False
+
+        for character in current_password:
+            if character.isalpha(): #If alphabetical letter
+                has_letter = True
+            elif character.isdigit(): #If number
+                has_number = True
+            else: #Else symbol
+                has_symbol = True 
+
+        if has_letter and has_number and has_symbol:
+            score = score + 3 
+        elif has_letter and has_number:
+            score = score + 2
+        elif has_letter and has_symbol:
+            score = score + 2
+        elif has_symbol and has_number:
+            score = score + 2
+        elif has_letter:
+            score = score + 1
+        elif has_number:
+            score = score + 1
+        elif has_symbol:
+            score = score + 1
+
     return render_template("index.html", score=score)
 
 if __name__ == "__main__":
