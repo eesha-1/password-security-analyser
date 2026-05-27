@@ -1,4 +1,4 @@
-An application designed to analyse password strength and security. Built using Python.
+An application designed to analyse password strength and security. Built using Python, Flask, HTML and CSS.
 
 Key features implemented:
 • Password strength scoring
