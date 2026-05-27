@@ -1,3 +1,6 @@
+import random
+import string
+
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -5,6 +8,7 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def home():
     score = None
+    secure_password = None
     if request.method == "POST":
         current_password = request.form["password"]
         score = 0
@@ -59,9 +63,35 @@ def home():
         elif has_lowercase:
             score = score + 1
         elif has_uppercase:
-            score = score + 1
+            score = score + 1        
+        acceptable_password = False
+        while acceptable_password == False:
+            characters = string.ascii_letters + string.digits + string.punctuation
+            secure_password = "" #initially sets secure password to nothing
+            for i in range(12): #Generates 12 random characters
+                secure_password = secure_password + random.choice(characters)
+               #Initially sets generated password to have no upper or lowercase letters or numbers, symbols   
+            generated_has_letter = False
+            generated_has_number = False
+            generated_has_symbol = False
+            generated_has_uppercase = False
+            generated_has_lowercase = False
 
-    return render_template("index.html", score=score)
+            for character in secure_password:
+                if character.isalpha(): #If alphabetical letter
+                        generated_has_letter = True
+                if character.isdigit(): #If number
+                        generated_has_number = True
+                if not character.isalpha() and not character.isdigit():
+                        generated_has_symbol = True
+                if character.isupper():
+                        generated_has_uppercase = True
+                if character.islower():
+                        generated_has_lowercase = True 
+            if generated_has_letter and generated_has_number and generated_has_symbol and generated_has_uppercase and generated_has_lowercase:
+                    acceptable_password = True
+                
+    return render_template("index.html", score=score, secure_password=secure_password)
 
 if __name__ == "__main__":
     app.run(debug=True)
