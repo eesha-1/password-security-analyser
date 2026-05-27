@@ -17,5 +17,10 @@
     {% if score is not none %}
          <h2>Your password strength score is: {{ score }}/7</h2>
     {% endif %}
+
+    {% if secure_password %}
+         <h2>Your recommended secure password is: {{ secure_password }}</h2>
+    {% endif %}
+
 </body>
 </html>
