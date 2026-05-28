@@ -41,3 +41,22 @@ input{
     padding: 12px;
     border-radius: 12px;
 }
+
+.tips-section {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.tip-card {
+    background-color: #111827;
+    color: #b8e6bf;
+    border: 2px solid #800000;
+    border-radius: 15px;
+    padding: 20px;
+    width: min(90%, 250px);
+    font-family: "Courier New", Courier, monospace;
+    box-shadow: 0 0 15px rgba(128, 0, 0, 0.3);
+}
