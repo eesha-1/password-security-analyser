@@ -94,7 +94,7 @@ def home():
             if generated_has_letter and generated_has_number and generated_has_symbol and generated_has_uppercase and generated_has_lowercase:
                     acceptable_password = True
                 
-    return render_template("index.html", score=score, secure_password=secure_password)
+    return render_template("index.html", score=score, secure_password=secure_password, error_message=error_message)
 
 if __name__ == "__main__":
     app.run(debug=True)
