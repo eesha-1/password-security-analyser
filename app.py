@@ -9,8 +9,11 @@ app = Flask(__name__)
 def home():
     score = None
     secure_password = None
+    error_message = None
     if request.method == "POST":
         current_password = request.form["password"]
+        if current_password.strip() == "":
+             error_message = "Invalid password. Please enter your password again."
         score = 0
         if len(current_password) < 6:
             score = score + 0 #Awards zero points for a password equal to or under 6 characters
