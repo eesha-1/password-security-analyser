@@ -7,7 +7,7 @@ Key features implemented:
 • Symbol detection (e.g. -, _, *, ')
 • Number detection 
 • Recommended secure password generation
-• Responsive frontend design for mobile and desktop devices
+• Responsive frontend design for mobile and desktop devices (suiting all screen sizes)
 
 Website live link: https://password-security-analyser-klol.onrender.com/
 
