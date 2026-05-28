@@ -1,13 +1,14 @@
 body { 
-    background-color: #9F8C76; /*page colour*/
+    background-color: whitesmoke; /*page colour*/
     margin: 0;
     padding: 20px;
-    min-height: 100vh;
+    min-height: 100vh; 
+    text-align: center;
 }
 
 h1{
-    font-family: "Courier New", monospace;
-    font-size: 48px;
+    font-family: "Courier New", monospace; 
+    font-size: clamp(32px, 8vw, 70px);
     font-weight: bold; 
     color: #800000;
 }
@@ -15,6 +16,28 @@ h1{
 p{
     font-family: "Papyrus", "Copperplate", fantasy;
     font-size: clamp(16px, 3vw, 24px); /*So screen adapts to fit all screen sizes*/
-    max-width: 700px;
+    max-width: 0 auto;
     font-weight: bold; 
+}
+
+button {
+    border-radius: 20px;
+    font-weight: bold;
+    color: Black;
+    background: linear-gradient(135deg, #f5e6ab, #b8e6bf);
+    padding: 12px 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: rgba(4, 73, 83, 0.4) 0px 0px 0px, rgba(95, 73, 154, 0.3) 0px 0px 25px, rgba(240, 46, 170, 0.2) 0px 0px 35px;
+}
+
+input{
+    width: min(90%, 350px);
+    padding: 12px;
+    border-radius: 12px;
 }
