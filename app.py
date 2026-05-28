@@ -12,8 +12,8 @@ def home():
     error_message = None
     if request.method == "POST":
         current_password = request.form["password"]
-        wants_recommendation = request.form.get("recommendation")
-        if current_password.strip() == "":
+        action = request.form.get("action")
+        if action == "analyse" and current_password.strip() == "":
              error_message = "Invalid password. Please enter your password again."
         else:     
              score = 0
@@ -70,7 +70,7 @@ def home():
                 score = score + 1
              elif has_uppercase:
                 score = score + 1     
-             if wants_recommendation:   
+             if action == "generate":   
                 acceptable_password = False
                 while acceptable_password == False:
                     characters = string.ascii_letters + string.digits + string.punctuation

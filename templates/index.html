@@ -13,12 +13,13 @@
     <form method="POST">
         <input type="password" name="password" placeholder="Enter your password">
         
-        <label>
-            <input type="checkbox" name="recommendation">
-            Generate secure password recommendation
-        </label>
+        <button type="submit" name="action" value="analyse">
+            Analyse Password
+        </button>
 
-        <button type="submit">Analyse Password</button>
+        <button type="submit" name="action" value="generate">
+            Generate Password
+        </button>
     </form>
     {% if error_message %}
          <h2>{{ error_message }}</h2>
